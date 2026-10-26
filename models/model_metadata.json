@@ -1,0 +1,266 @@
+{
+  "model_name": "RidgeRegression",
+  "trained_at": "2026-10-25T22:42:45.181130",
+  "training_samples": 4973,
+  "target": "lap_time_seconds",
+  "features": {
+    "all": [
+      "event_name",
+      "driver",
+      "team",
+      "compound",
+      "circuit_ref_time",
+      "lap_number",
+      "tyre_life",
+      "stint_length",
+      "track_temp",
+      "air_temp",
+      "humidity",
+      "rainfall"
+    ],
+    "categorical": [
+      "event_name",
+      "driver",
+      "team",
+      "compound"
+    ],
+    "numeric": [
+      "circuit_ref_time",
+      "lap_number",
+      "tyre_life",
+      "stint_length",
+      "track_temp",
+      "air_temp",
+      "humidity",
+      "rainfall"
+    ]
+  },
+  "race_separated_validation": {
+    "validation_type": "LeaveOneGroupOut (Race-Separated)",
+    "num_folds": 6,
+    "linear_regression": {
+      "mean_mae": 4.71225277280999,
+      "mean_rmse": 5.472307237135482,
+      "folds": [
+        {
+          "event": "Australian Grand Prix",
+          "mae": 11.821890916919772,
+          "rmse": 11.890936385405587,
+          "samples": 834
+        },
+        {
+          "event": "Azerbaijan Grand Prix",
+          "mae": 3.203409902334509,
+          "rmse": 3.3244216524544212,
+          "samples": 701
+        },
+        {
+          "event": "Bahrain Grand Prix",
+          "mae": 2.8927405772828143,
+          "rmse": 6.540654276646176,
+          "samples": 562
+        },
+        {
+          "event": "Italian Grand Prix",
+          "mae": 4.871338565090454,
+          "rmse": 4.958365853224428,
+          "samples": 889
+        },
+        {
+          "event": "Singapore Grand Prix",
+          "mae": 1.2110343130057386,
+          "rmse": 1.6460862073851588,
+          "samples": 1006
+        },
+        {
+          "event": "Spanish Grand Prix",
+          "mae": 4.27310236222665,
+          "rmse": 4.47337904769712,
+          "samples": 981
+        }
+      ]
+    },
+    "random_forest": {
+      "mean_mae": 6.624903174237335,
+      "mean_rmse": 7.344467258178494,
+      "folds": [
+        {
+          "event": "Australian Grand Prix",
+          "mae": 7.33172557398112,
+          "rmse": 7.428787386991856,
+          "samples": 834
+        },
+        {
+          "event": "Azerbaijan Grand Prix",
+          "mae": 6.19221524682223,
+          "rmse": 6.585266570931933,
+          "samples": 701
+        },
+        {
+          "event": "Bahrain Grand Prix",
+          "mae": 3.26726756453531,
+          "rmse": 5.896153537701616,
+          "samples": 562
+        },
+        {
+          "event": "Italian Grand Prix",
+          "mae": 8.800438188265101,
+          "rmse": 8.856425149319609,
+          "samples": 889
+        },
+        {
+          "event": "Singapore Grand Prix",
+          "mae": 6.53290267414488,
+          "rmse": 7.540976496425107,
+          "samples": 1006
+        },
+        {
+          "event": "Spanish Grand Prix",
+          "mae": 7.624869797675376,
+          "rmse": 7.759194407700849,
+          "samples": 981
+        }
+      ]
+    }
+  },
+  "full_training_fit": {
+    "mae": 0.9274146070406925,
+    "rmse": 2.0779945835481493
+  },
+  "circuit_benchmarks": {
+    "Australian Grand Prix": 84.875,
+    "Azerbaijan Grand Prix": 108.708,
+    "Bahrain Grand Prix": 103.304,
+    "Italian Grand Prix": 86.557,
+    "Singapore Grand Prix": 98.894,
+    "Spanish Grand Prix": 99.62
+  },
+  "pit_loss_estimates": {
+    "Australian Grand Prix": {
+      "seconds": 35.817,
+      "entry_lap_seconds": 23.139,
+      "out_lap_seconds": 12.678,
+      "samples": 32
+    },
+    "Azerbaijan Grand Prix": {
+      "seconds": 21.341,
+      "entry_lap_seconds": 21.341,
+      "out_lap_seconds": 0.0,
+      "samples": 30
+    },
+    "Bahrain Grand Prix": {
+      "seconds": 9.537,
+      "entry_lap_seconds": 9.537,
+      "out_lap_seconds": 0.0,
+      "samples": 67
+    },
+    "Italian Grand Prix": {
+      "seconds": 35.68,
+      "entry_lap_seconds": 35.68,
+      "out_lap_seconds": 0.0,
+      "samples": 23
+    },
+    "Singapore Grand Prix": {
+      "seconds": 24.227,
+      "entry_lap_seconds": 6.549,
+      "out_lap_seconds": 17.678,
+      "samples": 25
+    },
+    "Spanish Grand Prix": {
+      "seconds": 29.956,
+      "entry_lap_seconds": 5.357,
+      "out_lap_seconds": 24.599,
+      "samples": 28
+    },
+    "default": {
+      "seconds": 32.508,
+      "entry_lap_seconds": 16.011,
+      "out_lap_seconds": 16.497,
+      "samples": 205
+    }
+  },
+  "dataset_audit": {
+    "raw_laps_count": 6532,
+    "filter_steps": {
+      "valid_lap_time": 6266,
+      "accurate_laps": 5409,
+      "green_flag_laps": 5132,
+      "non_pit_laps": 5132,
+      "known_compounds": 5093,
+      "valid_tyre_life": 4973
+    },
+    "final_usable_sample_size": 4973,
+    "events": {
+      "Singapore Grand Prix": 1006,
+      "Spanish Grand Prix": 981,
+      "Italian Grand Prix": 889,
+      "Australian Grand Prix": 834,
+      "Azerbaijan Grand Prix": 701,
+      "Bahrain Grand Prix": 562
+    },
+    "compounds": {
+      "HARD": 1925,
+      "MEDIUM": 1603,
+      "SOFT": 1392,
+      "INTERMEDIATE": 53
+    },
+    "circuit_benchmarks": {
+      "Australian Grand Prix": 84.875,
+      "Azerbaijan Grand Prix": 108.708,
+      "Bahrain Grand Prix": 103.304,
+      "Italian Grand Prix": 86.557,
+      "Singapore Grand Prix": 98.894,
+      "Spanish Grand Prix": 99.62
+    },
+    "observed_tyre_age_by_compound": {
+      "HARD": 54,
+      "INTERMEDIATE": 7,
+      "MEDIUM": 50,
+      "SOFT": 47
+    },
+    "pit_loss_estimates": {
+      "Australian Grand Prix": {
+        "seconds": 35.817,
+        "entry_lap_seconds": 23.139,
+        "out_lap_seconds": 12.678,
+        "samples": 32
+      },
+      "Azerbaijan Grand Prix": {
+        "seconds": 21.341,
+        "entry_lap_seconds": 21.341,
+        "out_lap_seconds": 0.0,
+        "samples": 30
+      },
+      "Bahrain Grand Prix": {
+        "seconds": 9.537,
+        "entry_lap_seconds": 9.537,
+        "out_lap_seconds": 0.0,
+        "samples": 67
+      },
+      "Italian Grand Prix": {
+        "seconds": 35.68,
+        "entry_lap_seconds": 35.68,
+        "out_lap_seconds": 0.0,
+        "samples": 23
+      },
+      "Singapore Grand Prix": {
+        "seconds": 24.227,
+        "entry_lap_seconds": 6.549,
+        "out_lap_seconds": 17.678,
+        "samples": 25
+      },
+      "Spanish Grand Prix": {
+        "seconds": 29.956,
+        "entry_lap_seconds": 5.357,
+        "out_lap_seconds": 24.599,
+        "samples": 28
+      },
+      "default": {
+        "seconds": 32.508,
+        "entry_lap_seconds": 16.011,
+        "out_lap_seconds": 16.497,
+        "samples": 205
+      }
+    }
+  }
+}

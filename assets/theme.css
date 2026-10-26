@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
+
+:root {
+  --bg-primary: #1C1C1C;
+  --bg-secondary: #161616;
+  --bg-surface: #242424;
+  --bg-surface-elevated: #2A2A2A;
+  --text-primary: #F5F5F5;
+  --text-secondary: #B3B3B3;
+  --border: #3A3A3A;
+  --border-light: #4A4A4A;
+  --accent: #E10600;
+  --accent-hover: #FF2A2A;
+  --accent-subtle: rgba(225, 6, 0, 0.12);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* Global Application Container */
+.stApp {
+  background-color: var(--bg-primary);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Space Grotesk", "Segoe UI", -apple-system, sans-serif;
+}
+
+[data-testid="stAppViewContainer"] > .main {
+  background-color: var(--bg-primary);
+  background: var(--bg-primary);
+}
+
+.block-container {
+  max-width: 1520px;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Sidebar Styling */
+[data-testid="stSidebar"] {
+  background-color: var(--bg-secondary) !important;
+  background: var(--bg-secondary) !important;
+  border-right: 1px solid var(--border) !important;
+}
+
+[data-testid="stSidebar"] * {
+  color: var(--text-primary);
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+  color: var(--text-primary);
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Navigation Links in Sidebar */
+[data-testid="stSidebarNav"] {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+[data-testid="stSidebarNav"] ul {
+  gap: 0.25rem;
+}
+
+[data-testid="stSidebarNavLink"],
+[data-testid="stSidebarNav"] a,
+[data-testid="stSidebarNavItems"] a {
+  border-radius: 8px !important;
+  padding: 0.5rem 0.85rem !important;
+  color: var(--text-secondary) !important;
+  font-weight: 500 !important;
+  transition: all 0.15s ease !important;
+  border-left: 3px solid transparent !important;
+  background-color: transparent !important;
+}
+
+[data-testid="stSidebarNavLink"]:hover,
+[data-testid="stSidebarNav"] a:hover,
+[data-testid="stSidebarNavItems"] a:hover {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Active Navigation Item */
+[data-testid="stSidebarNavLink"][aria-current="page"],
+[data-testid="stSidebarNav"] a[aria-current="page"],
+[data-testid="stSidebarNavItems"] [aria-current="page"],
+[data-testid="stSidebarNav"] li[aria-selected="true"] a {
+  background-color: var(--accent-subtle) !important;
+  border-left: 3px solid var(--accent) !important;
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+/* Hero / Header Panel */
+.hero-panel {
+  position: relative;
+  padding: 1.5rem 1.8rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background-color: var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1rem;
+}
+
+.hero-kicker {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  margin: 0.35rem 0 0.3rem 0;
+  font-size: clamp(1.8rem, 2.2vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.hero-subtitle {
+  max-width: 60rem;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Insight Strip / Metric Pills */
+.insight-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.insight-pill {
+  flex: 1 1 auto;
+  min-width: 9.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background-color: var(--bg-surface);
+}
+
+.insight-label {
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+}
+
+.insight-value {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Section Headings */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+}
+
+.section-title::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 1.05rem;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+/* Metric Cards */
+div[data-testid="metric-container"] {
+  padding: 0.9rem 1.1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  background-color: var(--bg-surface) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+div[data-testid="metric-container"] label {
+  color: var(--text-secondary) !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+div[data-testid="metric-container"] [data-testid="stMetricValue"] {
+  font-family: "JetBrains Mono", monospace;
+  color: var(--text-primary) !important;
+  font-size: 1.6rem !important;
+  font-weight: 700;
+}
+
+/* Plotly Chart Containers */
+div[data-testid="stPlotlyChart"] {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.6rem 0.75rem 0.4rem 0.75rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 0.5rem;
+}
+
+/* Dataframe and Tables */
+div[data-testid="stDataFrame"] {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background-color: var(--bg-surface);
+}
+
+/* Buttons and Download Actions */
+.stButton > button,
+.stDownloadButton > button {
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.15s ease;
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+  border-color: var(--accent);
+  background-color: var(--accent);
+  color: #FFFFFF;
+}
+
+/* Form Controls (Selectbox, Multiselect, etc.) */
+.stSelectbox label,
+.stMultiSelect label,
+.stRadio label {
+  font-size: 0.75rem !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-secondary) !important;
+  margin-bottom: 0.25rem;
+}
+
+div[data-baseweb="select"] > div {
+  background-color: var(--bg-surface) !important;
+  border-color: var(--border) !important;
+  border-radius: 8px !important;
+  color: var(--text-primary) !important;
+}
+
+div[data-baseweb="select"]:hover > div {
+  border-color: var(--border-light) !important;
+}
+
+/* Multi-select Tags */
+div[data-baseweb="tag"] {
+  background-color: var(--bg-surface-elevated) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 6px !important;
+}
+
+div[data-baseweb="tag"] span {
+  color: var(--text-primary) !important;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+  gap: 0.35rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.25rem;
+}
+
+.stTabs [data-baseweb="tab"] {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--text-secondary);
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+.stTabs [aria-selected="true"] {
+  background-color: var(--accent-subtle) !important;
+  border-color: var(--accent) !important;
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+/* Sidebar Utilities */
+.sidebar-caption {
+  margin-top: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+hr {
+  border-color: var(--border) !important;
+  margin: 1rem 0 !important;
+}
+
+/* Alerts */
+.stAlert {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background-color: var(--bg-surface);
+}
+
+code {
+  font-family: "JetBrains Mono", monospace;
+  background-color: var(--bg-surface-elevated);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
